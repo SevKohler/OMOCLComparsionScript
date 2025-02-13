@@ -8,9 +8,11 @@ Severin Kohler, Diego Boscá, Florian Kärcher, Birger Haarbrandt, Manuel Prinz,
 
 Thanks!
 
-To rund the script:
+Setup
+-----
+To run the script:
 1. Download the OMOCL mappings and replace the medical_data folder with the one from OMOCL. 
-2. Bulk download all archetypes from the CKM and paste the unzipped folder into CKM. This could be also your local CKM. 
+2. Bulk download all archetypes from the CKM and paste the unzipped folder into CKM/. This could be also from your local CKM. 
 3. Run the python script. 
 4. Detailed output is in the archetype_comparsion.json.
 Count is provided in the print. 
