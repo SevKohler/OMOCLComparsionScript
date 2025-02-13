@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="date">2019-06-24</original_author>
+    <original_author id="name">Aurelie Tomczak</original_author>
+    <original_author id="organisation">Institute of Pathology, University Hospital Heidelberg</original_author>
+    <original_author id="email">au.tomczak@yahoo.com</original_author>
+    <other_contributors>Simon Schumacher, HiGHmed, Germany</other_contributors>
+    <other_contributors>Christina Jaeger-Schmidt, Heidelberg University Hospital, Germany</other_contributors>
+    <other_contributors>Gideon Giacomelli, Charité Berlin, Germany</other_contributors>
+    <other_contributors>Florian Kaercher, Charité Berlin, Germany</other_contributors>
+    <other_contributors>Heather Leslie, Atomica Informatics, Australia (openEHR Editor)</other_contributors>
+    <other_contributors>Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)</other_contributors>
+    <other_contributors>Silje Ljosland Bakke, Nasjonal IKT HF, Norway (openEHR Editor)</other_contributors>
+    <other_contributors>Francesca Frexia, CRS4 - Center for advanced studies, research and development in Sardinia, Italy</other_contributors>
+    <other_contributors>Cecilia Mascia, CRS4, Italy (openEHR Editor)</other_contributors>
+    <other_contributors>Paolo Uva, CRS4, Italy</other_contributors>
+    <other_contributors>Gianluigi Zanetti, CRS4, Italy</other_contributors>
+    <lifecycle_state>in_development</lifecycle_state>
+    <other_details id="licence">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.</other_details>
+    <other_details id="custodian_organisation">openEHR Foundation</other_details>
+    <other_details id="original_namespace">org.openehr</other_details>
+    <other_details id="original_publisher">openEHR Foundation</other_details>
+    <other_details id="custodian_namespace">org.openehr</other_details>
+    <other_details id="MD5-CAM-1.0.1">9B3D1743DC734C308CC6923B05E0F26B</other_details>
+    <other_details id="build_uid">953ae6df-de07-4969-a3fe-5ef081772fc9</other_details>
+    <other_details id="revision">0.0.1-alpha</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>de</code_string>
+      </language>
+      <purpose>Zur detaillierten Darstellung der Sequenzierungsanalyse an einer Probe inklusive der Aufzählung aller untersuchten Gene bei einer Panelsequenzierung.</purpose>
+      <keywords>Sequenzierung</keywords>
+      <keywords>Genomics</keywords>
+      <keywords>Assay</keywords>
+      <keywords>Panel</keywords>
+      <keywords>Pathologie</keywords>
+      <keywords>Sequenzierungsanalyse</keywords>
+      <keywords>Panelsequenzierung</keywords>
+      <keywords>Gene</keywords>
+      <keywords>Probe</keywords>
+      <use>Zur detaillierten Darstellung der Sequenzierungsanalyse an einer Probe inklusive der Aufzählung aller untersuchten Gene bei einer Panelsequenzierung.&#xD;
+&#xD;
+Eine oder mehrere Instanzen dieses Archetyps können im SLOT "Testdaten" in "OBSERVATION.laboratory_test_result" verschachtelt sein.</use>
+      <misuse>Dient nur zur Dokumentation des Analyseprotokolls, nicht jedoch zur Dokumentation der Ergebnisse der Sequenzanalyse. Die Ergebnisse werden mit dem Archetyp 'Genetische Variante' dokumentiert.</misuse>
+      <copyright>© HiGHmed, openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>nb</code_string>
+      </language>
+      <purpose>For å registrere detaljer om en gensekvensanalyse / genanalyse, inkludert en liste over alle testede gener dersom en genpaneltest ble utført.</purpose>
+      <keywords>Sekvensere</keywords>
+      <keywords>Genomikk</keywords>
+      <keywords>Assay</keywords>
+      <keywords>Panel</keywords>
+      <keywords>Patologi</keywords>
+      <keywords>Sekvenseringsanalyse</keywords>
+      <keywords>Panelsekvensering</keywords>
+      <keywords>Gen</keywords>
+      <keywords>DNA</keywords>
+      <keywords>Probe</keywords>
+      <keywords>Nuklotid</keywords>
+      <keywords>Nestegenerasjonssekvensering</keywords>
+      <use>Bruk for å registrere detaljer om en gensekvensanalyse /genanalyse, inkludert en liste over alle testede gener hvis en genpaneltest ble utført.&#xD;
+&#xD;
+En eller flere forekomster av denne arketypen kan nøstes i SLOTet "Undersøkelsesdetaljer" i arketypen "OBSERVATION.laboratory_test_result" (Laboratorieresultat).</use>
+      <misuse>Skal ikke brukes til å registrere resultatet av en gensekvensanalyse / genanalyse, men kun til å dokumentere protokollen / metoden brukt. For å registrere resultatet på genanalysen bruk arkeypen CLUSTER.genomic_variant_result (Genetisk variant resultat).</misuse>
+      <copyright />
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record details of the performed sequencing analysis including a list of all tested genes if panel sequencing was performed.</purpose>
+      <keywords>Sequencing</keywords>
+      <keywords>Genomics</keywords>
+      <keywords>Panel</keywords>
+      <keywords>Assay</keywords>
+      <keywords>Pathology</keywords>
+      <keywords>Sequencing analysis</keywords>
+      <keywords>Panel sequencing</keywords>
+      <keywords>Gene</keywords>
+      <keywords>Specimen</keywords>
+      <use>Use to record details of the performed sequencing analysis including a list of all tested genes if panel sequencing was performed.&#xD;
+&#xD;
+One or more instances of this archetype may be nested within the 'Testing details' SLOT in the OBSERVATION.laboratory_test_result.</use>
+      <misuse>Used only to document the analysis protocol but not to document the results of the sequence analysis. The results are documented with the archetype 'genetic variant'.</misuse>
+      <copyright>© HiGHmed, openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>de</code_string>
+    </language>
+    <author id="name">Aurelie Tomczak</author>
+    <author id="organisation">Institute of Pathology, University Hospital Heidelberg, Uniklinikum Heidelberg</author>
+    <author id="email">au.tomczak@yahoo.com, aurelie.tomczak@med.uni-heidelberg.de</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <author id="name">Liv Laugen, Vebjørn Arntzen</author>
+    <author id="organisation">​Oslo University Hospital, Norway</author>
+    <author id="email">liv.laugen@ous-hf.no, varntzen@ous-hf.no</author>
+  </translations>
+  <uid>
+    <value>80b7cd2c-11f8-429f-80a4-5c341a5b816f</value>
+  </uid>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.sequencing_assay.v0</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>true</upper_unbounded>
+      <lower>0</lower>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>0</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0010</code_list>
+                <code_list>at0011</code_list>
+                <code_list>at0012</code_list>
+                <code_list>at0013</code_list>
+                <code_list>at0014</code_list>
+                <code_list>at0015</code_list>
+                <code_list>at0016</code_list>
+                <code_list>at0017</code_list>
+                <code_list>at0018</code_list>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0036</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0039</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.knowledge_base_reference(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.knowledge_base_reference(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0038</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0002</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0021</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0003</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0022</code_list>
+                <code_list>at0023</code_list>
+                <code_list>at0024</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0006</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0007</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0008</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0025</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0030</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0031</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0032</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_COUNT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0033</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_COUNT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0035</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.reference_sequence(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0026</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/.*/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>.*</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0037</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>0</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="de">
+      <items code="at0000">
+        <items id="text">Sequencing assay</items>
+        <items id="description">Zur Beschreibung der Details der durchgeführten Sequenzierungsanalyse inclusive einer Aufzählung aller getesteten Gene, wenn eine Panelsequenzierung durchgeführt wurde.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Sequenzierungstechnologie</items>
+        <items id="description">Technologie, die zur Sequenzierung benutzt wurde.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Kit Name</items>
+        <items id="description">Name des Kits, das für das Experiment benutzt wurde.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Nukleinsäure</items>
+        <items id="description">Der Nukleinsäuretyp, z.B. DNA, RNA oder cf-DNA, der zur Sequenzierung verwendet wird.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Getestete Gene</items>
+        <items id="description">Liste aller getesteten Gene, wenn eine Panel-Sequenzierung durchgeführt wurde.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Gensymbol</items>
+        <items id="description">Das offizielle Gensymbol, das von der HGNC genehmigt wurde und eine Kurzform des Gennamens ist.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Genname</items>
+        <items id="description">Der vollständige vom HGNC genehmigte Genname, der den Charakter oder die Funktion des Gens wiedergibt.</items>
+      </items>
+      <items code="at0010">
+        <items id="text">NGS (hybrid-capture)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0011">
+        <items id="text">NGS (amplicon)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0012">
+        <items id="text">Genome sequencing</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0013">
+        <items id="text">Array-CGH</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0014">
+        <items id="text">MLPA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0015">
+        <items id="text">Sanger sequencing</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0016">
+        <items id="text">Fragment analysis</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0017">
+        <items id="text">Methylation assay</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0018">
+        <items id="text">Sonstiges</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0021">
+        <items id="text">Oncomine Comprehensive Panel V3</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0022">
+        <items id="text">DNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0023">
+        <items id="text">RNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0024">
+        <items id="text">cf-DNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0025">
+        <items id="text">Referenzsequenz des Gens</items>
+        <items id="description">Strukturierte Details zur Referenzsequenz des Gens.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Erweiterungen</items>
+        <items id="description">Zusätzliche Details, die aufgezeichnet werden sollen.</items>
+      </items>
+      <items code="at0030">
+        <items id="text">Getestete Region</items>
+        <items id="description">Liste aller getesteten Regionen, wenn eine Panel-Sequenzierung durchgeführt wurde.</items>
+      </items>
+      <items code="at0031">
+        <items id="text">Chromosomale Lokalisation</items>
+        <items id="description">Chromosomale Lokalisation der getesteten Region.</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Start</items>
+        <items id="description">Startposition der getesteten Region.</items>
+      </items>
+      <items code="at0033">
+        <items id="text">Ende</items>
+        <items id="description">Endposition der getesteten Region.</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Referenzsequenz der Region</items>
+        <items id="description">Strukturierte Details zur Referenzsequenz der Region.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Sequenzierungs- oder Analysegerät</items>
+        <items id="description">Zur Dokumentation von Geräten und Methoden, die zur Sequenzierung oder Ergebnisauswertung genutzt werden.</items>
+        <items id="comment">z.B. Sequenierungsgerät, Alignmentmethode, Variant caller.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Kommentar</items>
+        <items id="description">Kommentar zum Sequenzierungsassay, der nicht in anderen Feldern erfasst wurde.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Referenzgenom</items>
+        <items id="description">Strukturierte Details zur spezifischen Version der human sequence assembly, die für die Annotation verwendet wird.</items>
+        <items id="comment">Beispiel: 'GCF_000001405.38'.&#xD;
+&#xD;
+Source name: 'NCBI'.&#xD;
+Accession number: 'GCF_000001405'.&#xD;
+Version number: 'GCF_000001405.38'.&#xD;
+URL: 'https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.38/'.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Bioinformatic analysis workflow</items>
+        <items id="description">Strukturierte Details zum bioinformatischen Analyseworkflow oder zum verwendeten Protokoll.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Sequencing assay</items>
+        <items id="description">To record details of the sequencing analysis including a list of all tested genes if panel sequencing was performed.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Sequencing technology</items>
+        <items id="description">Name of the technology used for sequencing analysis.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Kit name</items>
+        <items id="description">Name of the kit used for the experiment.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Nucleic acid</items>
+        <items id="description">Type of nucleic acid used for sequencing, e.g. DNA, RNA oder cf-DNA.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Tested Genes</items>
+        <items id="description">List of all tested genes, if panel sequencing was performed.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Gene symbol</items>
+        <items id="description">The official gene symbol approved by the HGNC, which is a short abbreviated form of the gene name.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Gene name</items>
+        <items id="description">The full gene name approved by the HGNC that convey the character or function of the gene.</items>
+      </items>
+      <items code="at0010">
+        <items id="text">NGS (hybrid-capture)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0011">
+        <items id="text">NGS (amplicon)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0012">
+        <items id="text">Genome sequencing</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0013">
+        <items id="text">Array-CGH</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0014">
+        <items id="text">MLPA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0015">
+        <items id="text">Sanger sequencing</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0016">
+        <items id="text">Fragment analysis</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0017">
+        <items id="text">Methylation assay</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0018">
+        <items id="text">Miscellaneous</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0021">
+        <items id="text">Oncomine Comprehensive Panel V3</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0022">
+        <items id="text">DNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0023">
+        <items id="text">RNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0024">
+        <items id="text">cf-DNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0025">
+        <items id="text">Gene reference sequence</items>
+        <items id="description">Structured details on the reference sequence of the gene.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Extensions</items>
+        <items id="description">Additional details to be captured.</items>
+      </items>
+      <items code="at0030">
+        <items id="text">Tested Region</items>
+        <items id="description">List of all tested regions, if panel sequencing was performed.</items>
+      </items>
+      <items code="at0031">
+        <items id="text">Chromosomal location</items>
+        <items id="description">Chromosomal location of tested region.</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Start</items>
+        <items id="description">Start position of the tested region.</items>
+      </items>
+      <items code="at0033">
+        <items id="text">End</items>
+        <items id="description">End position of the tested region.</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Reference sequence of region</items>
+        <items id="description">Structured details on the reference sequence of the region.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Sequencing or analysis device</items>
+        <items id="description">Used to specify devices and tools used for the sequencing analysis or result annotation.</items>
+        <items id="comment">e.g. Sequencing device, alignment method, variant caller.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Comment</items>
+        <items id="description">Comment on the sequencing assay that was not captured in other fields.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Reference genome</items>
+        <items id="description">Structured details about the specific version of the human sequence assembly used for annotation.</items>
+        <items id="comment">For example: 'GCF_000001405.38'.&#xD;
+&#xD;
+Source name: 'NCBI'.&#xD;
+Accession number: 'GCF_000001405'.&#xD;
+Version number: 'GCF_000001405.38'.&#xD;
+URL: 'https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.38/'.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Bioinformatic analysis workflow</items>
+        <items id="description">Structured details about the bioinformatic analysis workflow or the protocol that is used.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="nb">
+      <items code="at0000">
+        <items id="text">Gensekvensanalyse/genanalyse</items>
+        <items id="description">For å beskrive detaljene i den utførte gensekvensanalyse / genanalyse, inkludert en liste over alle testede gener, hvis genpaneltesting ble utført.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Gensekvensanalysemetode / Gentestmetode / sekvenseringsmetode</items>
+        <items id="description">Teknologi brukt til gensekvensanalysen.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Navn på Kit</items>
+        <items id="description">Navnet på kitet som ble brukt til eksperimentet.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Nukleinsyre</items>
+        <items id="description">Type nukleinsyre som er brukt til sekvensanalysen, f.eks. DNA, RNA eller cf-DNA.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Testede gener</items>
+        <items id="description">Liste over alle gener som ble testet hvis det ble utført en genpaneltest.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Gensymbol</items>
+        <items id="description">Det offisielle gensymbolet godkjent av HGNC, som er en kortform for gennavnet.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Gennavn</items>
+        <items id="description">Det fulle HGNC-godkjente gennamet som gjenspeiler karakteren eller funksjonen til genet.</items>
+      </items>
+      <items code="at0010">
+        <items id="text">NGS (hybridisering)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0011">
+        <items id="text">NGS (amplifisering)</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0012">
+        <items id="text">Genomsekvensering</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0013">
+        <items id="text">*Array-CGH / ACGH</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0014">
+        <items id="text">MLPA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0015">
+        <items id="text">Sangersekvensering</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0016">
+        <items id="text">*FISH?</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0017">
+        <items id="text">Metylering analyse</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0018">
+        <items id="text">Diverse</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0021">
+        <items id="text">Oncomine Comprehensive Panel V3</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0022">
+        <items id="text">DNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0023">
+        <items id="text">RNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0024">
+        <items id="text">cfDNA</items>
+        <items id="description"></items>
+      </items>
+      <items code="at0025">
+        <items id="text">Referansesekvens for genet</items>
+        <items id="description">Strukturerte detaljer om referansesekvensen til genet.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Tilleggsinformasjon</items>
+        <items id="description">Ytterligere informasjon som ikke er registrert andre steder.</items>
+      </items>
+      <items code="at0030">
+        <items id="text">Testet genregion</items>
+        <items id="description">Liste over alle de testede regionene hvis det ble utført en genpaneltest.</items>
+      </items>
+      <items code="at0031">
+        <items id="text">Kromosomal lokalisasjon</items>
+        <items id="description">Lokalisasjonen til kromosomet i den testede regionen.</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Start</items>
+        <items id="description">Startposisjon for det testede området.</items>
+      </items>
+      <items code="at0033">
+        <items id="text">Slutt</items>
+        <items id="description">Sluttposisjonen til det testede området.</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Referansesekvens for regionen</items>
+        <items id="description">Strukturerte detaljer om referansesekvensen til regionen.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Sekvensering eller analyse instrument</items>
+        <items id="description">Bruk for å spesifisere enheter og verktøy som brukes til sekvenseringsanalyse eller resultatkommentar.</items>
+        <items id="comment">For eksempel sekvensieringsinstrument, justeringsmetode, variant identifiserer (variant caller).</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Kommentar</items>
+        <items id="description">Ytterligere fritekst om analyseresultatet som ikke fanges opp av andre elementer.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Referansegenom</items>
+        <items id="description">* Strukturerte detaljer om den spesifikke versjonen av XXXXXXXXX som er brukt for kommentar.</items>
+        <items id="comment">*For eksempel:&#xD;
+&#xD;
+Navn på kilde: 'NCBI'.&#xD;
+Accession number: 'GCF_000001405'.&#xD;
+Versjonsnummer: 'GCF_000001405.38'.&#xD;
+URL: 'https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.38/'.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Bioinformatisk analyseprosess</items>
+        <items id="description">Strukturerte detaljer om den bioinformatiske analyseprosessen eller protokollen som er brukt.</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="LOINC">
+      <items code="at0007">
+        <value>
+          <terminology_id>
+            <value>LOINC</value>
+          </terminology_id>
+          <code_string>48018-6</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+
