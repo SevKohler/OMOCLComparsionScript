@@ -91,11 +91,21 @@ def collect_archetypes_from_xml_files(directory):
     return archetypes, published_archetypes
 
 
-def calculate_coverage(published_archetypes, omocl_archetypes):
+def calculate_coverage_published(published_archetypes, omocl_archetypes):
     """Calculate the percentage of published archetypes that are mapped in OMOCL."""
     unique_to_ckm = published_archetypes.difference(omocl_archetypes)
     if len(published_archetypes) > 0:  # Avoid division by zero
         percentage = (len(unique_to_ckm) / len(published_archetypes)) * 100
+        percentage = 100 - percentage
+    else:
+        percentage = 0  # If list A is empty, return 0
+    return percentage
+
+def calculate_coverage_non_publihsed(archetypes, omocl_archetypes):
+    """Calculate the percentage of published archetypes that are mapped in OMOCL."""
+    unique_to_ckm = archetypes.difference(omocl_archetypes)
+    if len(archetypes) > 0:  # Avoid division by zero
+        percentage = (len(unique_to_ckm) / len(archetypes)) * 100
         percentage = 100 - percentage
     else:
         percentage = 0  # If list A is empty, return 0
@@ -123,7 +133,9 @@ def compare_archetypes(omocl_data_dir, archetypes_dir):
     published_not_in_omocl = list(archetypes_in_ckm_published - omocl_archetypes)
 
     # Calculate coverage percentage
-    coverage_percentage = calculate_coverage(archetypes_in_ckm_published, omocl_archetypes)
+    coverage_published = calculate_coverage_published(archetypes_in_ckm_published, omocl_archetypes)
+    coverage_non_publihsed = calculate_coverage_published(archetypes_in_ckm_dir, omocl_archetypes)
+
 
     # Save results to JSON
     result = {
@@ -136,7 +148,8 @@ def compare_archetypes(omocl_data_dir, archetypes_dir):
     # Print summary
     print(f"{len(omocl_archetypes)} archetypes are mapped in OMOCL")
     print(f"{len(published_not_in_omocl)} non-mapped published archetypes found, {len(in_ckm_not_in_omocl)} non-mapped non-published archetypes found.")
-    print(f"The current coverage is: {coverage_percentage:.2f}%")
+    print(f"The current coverage of publihsed archetypes is: {coverage_published:.2f}%")
+    print(f"The current coverage of all archetypes is: {coverage_non_publihsed:.2f}%")
     print("Be aware that not all of these archetypes are transformable in a useful way to OMOP")
 
 
