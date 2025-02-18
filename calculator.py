@@ -13,6 +13,24 @@ def extract_archetype_from_yaml(yaml_data):
     except KeyError:
         return None
 
+def extract_archetype_from_xml_published(file_path):
+    tree = ET.parse(file_path)
+    root = tree.getroot()
+
+    # Define the OpenEHR namespace
+    ns = {'openEHR': 'http://schemas.openehr.org/v1'}
+
+    # Search for the lifecycle_state value using the namespace
+    lifecycle_state = root.find('.//openEHR:description/openEHR:lifecycle_state', ns)
+    
+    # Check if the lifecycle_state is "published"
+    if lifecycle_state is not None and lifecycle_state.text == "published":
+        # If lifecycle_state is published, find the archetype_id
+        archetype_id = root.find('.//openEHR:archetype_id/openEHR:value', ns)
+        if archetype_id is not None and "COMPOSITION" not in archetype_id.text and "DEMOGRAPHIC" not in archetype_id.text:
+            return archetype_id.text  # Return the archetype_id
+    return None  # Return None if lifecycle_state is not published or archetype_id is not found
+
 def extract_archetype_from_xml(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
@@ -26,16 +44,11 @@ def extract_archetype_from_xml(file_path):
     if archetype_id is not None and "COMPOSITION" not in archetype_id.text and "DEMOGRAPHIC" not in archetype_id.text:
         return archetype_id.text
     return None
-def count_v0_archetypes(in_ckm_not_in_OMOCL):
-    no_v0_list = set()
-    for x in in_ckm_not_in_OMOCL:
-        if "v0" not in x:
-            no_v0_list.add(x)
-    return list(no_v0_list)
 
 def compare_archetypes(OMOCL_data_dir, archetypes_dir):
     OMOCL_archetypes = set()
     archetypes_in_ckm_dir = set()
+    archetypes_in_ckm_published = set()
 
     # Collect archetypes from OMOCL_data/
     for root, _, files in os.walk(OMOCL_data_dir):
@@ -58,18 +71,19 @@ def compare_archetypes(OMOCL_data_dir, archetypes_dir):
             if file.endswith('.xml'):
                 xml_file_path = os.path.join(root, file)
                 archetype_id = extract_archetype_from_xml(xml_file_path)
+                archetype_id_only_published = extract_archetype_from_xml_published(xml_file_path)
                 if archetype_id:
                     archetypes_in_ckm_dir.add(archetype_id)
-
-    # Find differences
+                if archetype_id_only_published:
+                    archetypes_in_ckm_published.add(archetype_id_only_published)    
+        
     in_ckm_not_in_OMOCL = list(archetypes_in_ckm_dir - OMOCL_archetypes)
     in_OMOCL_not_in_ckm = list(OMOCL_archetypes - archetypes_in_ckm_dir)
-    without_v0_not_in_OMOCL = count_v0_archetypes(in_ckm_not_in_OMOCL)
-
+    published_not_in_OMOCL = list(archetypes_in_ckm_published - OMOCL_archetypes)
 
     # Save results to JSON
     result = {
-        "published archetypes that are not mapped in OMOCL": without_v0_not_in_OMOCL,
+        "published archetypes that are not mapped in OMOCL": published_not_in_OMOCL,
         "including draft archetypes that are not mapped in OMOCL": in_ckm_not_in_OMOCL,
         "not in CKM but in OMOCL (older versions of archetypes usually)": in_OMOCL_not_in_ckm
     }
@@ -79,7 +93,7 @@ def compare_archetypes(OMOCL_data_dir, archetypes_dir):
 
     print("Comparison completed. Results saved to 'archetype_comparison.json'.")
     print(str(len(OMOCL_archetypes))+" archetypes are mapped in OMOCL")
-    print(str(len(without_v0_not_in_OMOCL))+" non mapped published(v1) archetypes found, "+str(len(in_ckm_not_in_OMOCL))+" non mapped draft archetypes found.")
+    print(str(len(published_not_in_OMOCL))+" non mapped published archetypes found, "+str(len(in_ckm_not_in_OMOCL))+" non mapped draft archetypes found.")
     print("Be aware that not all of these archetypes are transformable in a useful way to OMOP")
 
 if __name__ == "__main__":
