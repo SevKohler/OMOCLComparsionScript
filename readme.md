@@ -1,4 +1,4 @@
-# OMOCL
+# OMOCL comparsion script
 
 Note
 ------
@@ -16,5 +16,7 @@ To run the script:
 3. Run the python script. 
 4. Detailed output is in the archetype_comparsion.json.
 Count is provided in the print. 
+
+The comparsion does not include COMPOSITION and DEMOGRAPHIC archetypes.
 
 If you want to use this to check how much of your openEHR platform can be mapped to OMOP you can also provide the archetypes in XML format instead as subfolders into CKM/archetypes/. 
